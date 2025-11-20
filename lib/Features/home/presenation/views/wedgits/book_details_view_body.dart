@@ -1,6 +1,7 @@
 import 'package:bookly/Core/utils/Styles.dart';
 import 'package:bookly/Features/home/presenation/views/wedgits/Custom_book_details_appbar.dart';
 import 'package:bookly/Features/home/presenation/views/wedgits/Custom_book_Item.dart';
+import 'package:bookly/Features/home/presenation/views/wedgits/book_rating.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -25,12 +26,20 @@ class BookDetailsViewBody extends StatelessWidget {
             style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 6),
-          Text(
-            "Rudyaed Kipling",
-            style: Styles.textStyle18.copyWith(
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.w500,
+          Opacity(
+            opacity: .8,
+            child: Text(
+              "Rudyaed Kipling",
+              style: Styles.textStyle18.copyWith(
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.w500,
+              ),
             ),
+
+          ),
+          const SizedBox(height: 18,),
+          const BookRate(
+            mainAxisAlignment: MainAxisAlignment.center,
           ),
         ],
       ),
