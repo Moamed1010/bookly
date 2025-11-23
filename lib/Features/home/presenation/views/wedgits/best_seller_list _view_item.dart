@@ -8,7 +8,7 @@ import 'package:go_router/go_router.dart';
 
 
 class BeatSellerListViewItem extends StatelessWidget {
-  const BeatSellerListViewItem({super.key});
+  const BeatSellerListViewItem.BookListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
