@@ -5,11 +5,5 @@ class BookEntity {
   final num Price;
   final num Rating;
 
-  BookEntity({
-    required this.Name,
-    required this.Title,
-    required this.AutherName,
-    required this.Price,
-    required this.Rating,
-  });
+  BookEntity(this.Name, this.Title, this.AutherName, this.Price, this.Rating);
 }
