@@ -6,14 +6,13 @@ import 'package:bookly/constans.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-
 class BeatSellerListViewItem extends StatelessWidget {
   const BeatSellerListViewItem.BookListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         GoRouter.of(context).push(AppRouter.KBookDetailsView);
       },
       child: SizedBox(

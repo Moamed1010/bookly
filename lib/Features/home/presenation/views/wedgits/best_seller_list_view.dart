@@ -12,10 +12,10 @@ class BeatSellerListView extends StatelessWidget {
       itemCount: 10,
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 7),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
           child: BeatSellerListViewItem.BookListViewItem(),
         );
       },
-    ); 
+    );
   }
 }

@@ -15,6 +15,4 @@ class FetchNewestBoosUseCase extends UseCase<List<BookEntity>> {
   }
 }
 
-
-
 class NoParam {}

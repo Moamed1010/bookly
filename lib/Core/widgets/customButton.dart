@@ -6,7 +6,8 @@ class CustomButtom extends StatelessWidget {
     super.key,
     required this.backgroundcolor,
     required this.textcolor,
-    this.borderRadius, required this.text,
+    this.borderRadius,
+    required this.text,
   });
   final String text;
   final Color backgroundcolor;
@@ -21,14 +22,11 @@ class CustomButtom extends StatelessWidget {
         style: TextButton.styleFrom(
           backgroundColor: backgroundcolor,
           shape: RoundedRectangleBorder(
-            borderRadius:borderRadius?? BorderRadius.circular(16),
+            borderRadius: borderRadius ?? BorderRadius.circular(16),
           ),
         ),
         onPressed: () {},
-        child: Text(
-          text,
-          style: Styles.textStyle18.copyWith(color: textcolor),
-        ),
+        child: Text(text, style: Styles.textStyle18.copyWith(color: textcolor)),
       ),
     );
   }

@@ -15,6 +15,4 @@ class FetchFeatureBoosUseCase extends UseCase<List<BookEntity>> {
   }
 }
 
-
-
 class NoParam {}
