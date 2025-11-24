@@ -1,13 +1,20 @@
 import 'package:bookly/Core/errors/failuir.dart';
+import 'package:bookly/Core/use_cases/no_param_use_case.dart';
 import 'package:bookly/Features/home/Domain/Repositories/home_repo.dart';
 import 'package:bookly/Features/home/Domain/entities/book_entity.dart';
 import 'package:dartz/dartz.dart';
 
-class FetchFeatureBoosUseCase {
+class FetchFeatureBoosUseCase extends UseCase<List<BookEntity>> {
   final HomeRepo homeRepo;
 
   FetchFeatureBoosUseCase(this.homeRepo);
-  Future<Either<Failuir, List<BookEntity>>> fetchFeatureBooks() {
-    return homeRepo.fetchFeatureBooks();
+
+  @override
+  Future<Either<Failuir, List<BookEntity>>> call() async {
+    return await homeRepo.fetchFeatureBooks();
   }
 }
+
+
+
+class NoParam {}
