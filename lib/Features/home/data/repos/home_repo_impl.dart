@@ -4,6 +4,7 @@ import 'package:bookly/Features/home/Domain/entities/book_entity.dart';
 import 'package:bookly/Features/home/data/data_sources/home_local_data_source.dart';
 import 'package:bookly/Features/home/data/data_sources/home_remote_data_source.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImpl extends HomeRepo {
   final HomeRemoteDataSource homeRemoteDataSource;
@@ -14,28 +15,44 @@ class HomeRepoImpl extends HomeRepo {
   @override
   Future<Either<Failuir, List<BookEntity>>> fetchFeatureBooks() async {
     try {
-      var cashedFeatureBooks = homeLocalDataSource.fetchFeatureBooks();
-      if (cashedFeatureBooks.isNotEmpty) {
-        return right(cashedFeatureBooks);
+      List<BookEntity> books;
+      books = homeLocalDataSource.fetchFeatureBooks();
+      if (books.isNotEmpty) {
+        return right(books);
       }
-      var featureBooks = await homeRemoteDataSource.fetchFeatureBooks();
-      return right(featureBooks);
-    } on Exception catch (e) {
-      return left(Failuir());
+      books = await homeRemoteDataSource.fetchFeatureBooks();
+      return right(books);
+    } catch (e) {
+      if (e is DioError) {
+        return left(ServerFailure.fromDiorError(e));
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
     }
   }
 
   @override
   Future<Either<Failuir, List<BookEntity>>> fetchNewestBooks() async {
     try {
-      var cachedNewestBooks = homeLocalDataSource.fetchNewestBooks();
-      if (cachedNewestBooks.isNotEmpty) {
-        return right(cachedNewestBooks);
+      List<BookEntity> books;
+      books = homeLocalDataSource.fetchNewestBooks();
+      if (books.isNotEmpty) {
+        return right(books);
       }
-      var newestBooks = await homeRemoteDataSource.fetchNewestBooks();
-      return right(newestBooks);
-    } on Exception catch (e) {
-      return left(Failuir());
+      books = await homeRemoteDataSource.fetchNewestBooks();
+      return right(books);
+    }  catch (e) {
+      if (e is DioError) {
+        return left(ServerFailure.fromDiorError(e));
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
     }
   }
 }
