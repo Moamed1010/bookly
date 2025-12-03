@@ -4,10 +4,10 @@ import 'package:bookly/Features/home/Domain/Repositories/home_repo.dart';
 import 'package:bookly/Features/home/Domain/entities/book_entity.dart';
 import 'package:dartz/dartz.dart';
 
-class FetchFeatureBoosUseCase extends UseCase<List<BookEntity>> {
+class FetchFeatureBooksUseCase extends UseCase<List<BookEntity>> {
   final HomeRepo homeRepo;
 
-  FetchFeatureBoosUseCase(this.homeRepo);
+  FetchFeatureBooksUseCase(this.homeRepo);
 
   @override
   Future<Either<Failuir, List<BookEntity>>> call() async {
