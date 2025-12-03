@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:bookly/Features/home/Domain/entities/book_entity.dart';
-import 'package:bookly/Features/home/Domain/use_case/fetch_newest_use_cae.dart';
+import 'package:bookly/Features/home/Domain/use_case/fetch_newest_books_use_cae.dart';
 import 'package:meta/meta.dart';
 
 part 'newest_books_state.dart';

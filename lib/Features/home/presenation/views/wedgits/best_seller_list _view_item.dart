@@ -16,7 +16,7 @@ class BeatSellerListViewItem extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.KBookDetailsView);
       },
       child: SizedBox(
-        height: 135,
+        height: 140,
         child: Row(
           children: [
             AspectRatio(

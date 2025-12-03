@@ -7,6 +7,7 @@ class NewestBooksInitial extends NewestBooksCubitState {}
 
 class NewestBooksLoading extends NewestBooksCubitState {}
 
+
 class NewestBooksSuccess extends NewestBooksCubitState {
   final List<BookEntity> books;
 

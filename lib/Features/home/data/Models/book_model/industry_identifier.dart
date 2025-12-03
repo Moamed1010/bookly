@@ -1,8 +1,10 @@
-class IndustryIdentifier {
-  String? type;
-  String? identifier;
+import 'package:equatable/equatable.dart';
 
-  IndustryIdentifier({this.type, this.identifier});
+class IndustryIdentifier extends Equatable {
+  final String? type;
+  final String? identifier;
+
+  const IndustryIdentifier({this.type, this.identifier});
 
   factory IndustryIdentifier.fromJson(Map<String, dynamic> json) {
     return IndustryIdentifier(
@@ -11,5 +13,11 @@ class IndustryIdentifier {
     );
   }
 
-  Map<String, dynamic> toJson() => {'type': type, 'identifier': identifier};
+  Map<String, dynamic> toJson() => {
+        'type': type,
+        'identifier': identifier,
+      };
+
+  @override
+  List<Object?> get props => [type, identifier];
 }

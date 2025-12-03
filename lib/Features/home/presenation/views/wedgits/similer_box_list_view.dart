@@ -14,7 +14,9 @@ class similerBookListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: const CustomBookImage(),
+            child:  CustomBookImage(
+              image: '',
+            ),
           );
         },
       ),
